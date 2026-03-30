@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENITH-VECTOR | Super Vroom Vroom Adventure</title>
+    <style>
+        body { background-color: #0f0f0f; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
+        .flip-book { width: 1400px; height: 900px; box-shadow: 0 0 100px rgba(0,0,0,1); display: none; }
+        
+        .page { background-color: #ffffff; overflow: hidden; position: relative; border-left: 1px solid #f0f0f0; }
+        
+        .cover-page { 
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            display: flex; justify-content: center; align-items: center;
+        }
+        .cover-img { 
+            width: 95%; height: 95%; 
+            object-fit: contain; 
+            position: relative; 
+        }
+        
+        .blank-page { background-color: #f9f9f9; }
+
+        /* --- Internal B&W Styling --- */
+        .main-img { width: 100%; height: 100%; object-fit: contain; position: absolute; top: 5%; left: 0; transform-origin: center; }
+        
+        /* Standard Zoom for 42 pages */
+        .zoom-standard { transform: scale(1.25); }
+        
+        /* Special Zoom for Image 43 (The Blimp) */
+        .zoom-extra { transform: scale(1.6); top: 0; } /* Increased scale and adjusted top to keep it centered */
+
+        .ref-box { position: absolute; top: 30px; right: 30px; width: 240px; height: 170px; border: 4px solid #333; border-radius: 15px; overflow: hidden; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); z-index: 20; background: white; }
+        .ref-img { width: 100%; height: 100%; object-fit: contain; }
+        .palette-container { position: absolute; bottom: 40px; width: 100%; display: flex; justify-content: center; gap: 15px; z-index: 25; }
+        .color-circle { width: 40px; height: 40px; border-radius: 50%; border: 3px solid #333; box-shadow: 3px 3px 8px rgba(0,0,0,0.2); }
+    </style>
+</head>
+<body>
+    <div class="flip-book" id="flipbook">
+        <div class="page cover-page" data-density="hard">
+            <img src="Front.png" class="cover-img" alt="Front Cover" />
+        </div>
+        <div class="page blank-page" data-density="hard"></div>
+
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (1).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (1).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #92daf1;"></div><div class="color-circle" style="background-color: #e83c31;"></div><div class="color-circle" style="background-color: #f0f7f7;"></div><div class="color-circle" style="background-color: #3a3a3a;"></div><div class="color-circle" style="background-color: #81b1c3;"></div><div class="color-circle" style="background-color: #aab0b0;"></div><div class="color-circle" style="background-color: #a5342f;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (2).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (2).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #b2e9f1;"></div><div class="color-circle" style="background-color: #f9c932;"></div><div class="color-circle" style="background-color: #494948;"></div><div class="color-circle" style="background-color: #9accd2;"></div><div class="color-circle" style="background-color: #2a2a2a;"></div><div class="color-circle" style="background-color: #76989d;"></div><div class="color-circle" style="background-color: #8b9066;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (3).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (3).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #b9d4d7;"></div><div class="color-circle" style="background-color: #414141;"></div><div class="color-circle" style="background-color: #3a95cc;"></div><div class="color-circle" style="background-color: #939393;"></div><div class="color-circle" style="background-color: #252424;"></div><div class="color-circle" style="background-color: #e43d3b;"></div><div class="color-circle" style="background-color: #f8f6bf;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (4).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (4).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #e73d35;"></div><div class="color-circle" style="background-color: #def4f8;"></div><div class="color-circle" style="background-color: #1cb1e4;"></div><div class="color-circle" style="background-color: #4f4f4f;"></div><div class="color-circle" style="background-color: #cacaca;"></div><div class="color-circle" style="background-color: #7f7f7f;"></div><div class="color-circle" style="background-color: #333333;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (5).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (5).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #d4eff8;"></div><div class="color-circle" style="background-color: #bcbcbc;"></div><div class="color-circle" style="background-color: #21a5df;"></div><div class="color-circle" style="background-color: #80c04f;"></div><div class="color-circle" style="background-color: #525252;"></div><div class="color-circle" style="background-color: #c5b539;"></div><div class="color-circle" style="background-color: #9aa037;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (6).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (6).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #289bd0;"></div><div class="color-circle" style="background-color: #87d3ec;"></div><div class="color-circle" style="background-color: #ccedf5;"></div><div class="color-circle" style="background-color: #3f3f3f;"></div><div class="color-circle" style="background-color: #217aa2;"></div><div class="color-circle" style="background-color: #76b4c9;"></div><div class="color-circle" style="background-color: #5990a3;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (8).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (8).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #f9d242;"></div><div class="color-circle" style="background-color: #13ace0;"></div><div class="color-circle" style="background-color: #a5e2f6;"></div><div class="color-circle" style="background-color: #a19741;"></div><div class="color-circle" style="background-color: #e7e8eb;"></div><div class="color-circle" style="background-color: #349baf;"></div><div class="color-circle" style="background-color: #c4c3c2;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (7).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (7).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #4ebae9;"></div><div class="color-circle" style="background-color: #fad92f;"></div><div class="color-circle" style="background-color: #828785;"></div><div class="color-circle" style="background-color: #333332;"></div><div class="color-circle" style="background-color: #97fdff;"></div><div class="color-circle" style="background-color: #3e748b;"></div><div class="color-circle" style="background-color: #439dc5;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (35).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (35).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #e72b2a;"></div><div class="color-circle" style="background-color: #c6ecf4;"></div><div class="color-circle" style="background-color: #787878;"></div><div class="color-circle" style="background-color: #2198ce;"></div><div class="color-circle" style="background-color: #b6b6b6;"></div><div class="color-circle" style="background-color: #24596f;"></div><div class="color-circle" style="background-color: #b62423;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (9).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (9).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #6a6a6a;"></div><div class="color-circle" style="background-color: #129fde;"></div><div class="color-circle" style="background-color: #c6c6c6;"></div><div class="color-circle" style="background-color: #e8e8e8;"></div><div class="color-circle" style="background-color: #aaaaaa;"></div><div class="color-circle" style="background-color: #292929;"></div><div class="color-circle" style="background-color: #f3bf2a;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (10).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (10).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #e82d2c;"></div><div class="color-circle" style="background-color: #91d9ef;"></div><div class="color-circle" style="background-color: #d3d3d3;"></div><div class="color-circle" style="background-color: #6e6e6e;"></div><div class="color-circle" style="background-color: #b0b0af;"></div><div class="color-circle" style="background-color: #f1f2f7;"></div><div class="color-circle" style="background-color: #ffe038;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (11).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (11).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #272726;"></div><div class="color-circle" style="background-color: #c3e6ee;"></div><div class="color-circle" style="background-color: #e72f2b;"></div><div class="color-circle" style="background-color: #b72723;"></div><div class="color-circle" style="background-color: #aeaeae;"></div><div class="color-circle" style="background-color: #aa5554;"></div><div class="color-circle" style="background-color: #797878;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (12).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (12).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #aee0f5;"></div><div class="color-circle" style="background-color: #d2d2d2;"></div><div class="color-circle" style="background-color: #e42c2c;"></div><div class="color-circle" style="background-color: #b7b7b7;"></div><div class="color-circle" style="background-color: #2e2e2e;"></div><div class="color-circle" style="background-color: #7c7c7c;"></div><div class="color-circle" style="background-color: #969696;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (13).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (13).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #404040;"></div><div class="color-circle" style="background-color: #90d5eb;"></div><div class="color-circle" style="background-color: #fbd641;"></div><div class="color-circle" style="background-color: #e73935;"></div><div class="color-circle" style="background-color: #a78f2e;"></div><div class="color-circle" style="background-color: #262626;"></div><div class="color-circle" style="background-color: #b82f2c;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (14).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (14).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #f7d134;"></div><div class="color-circle" style="background-color: #b0e2ea;"></div><div class="color-circle" style="background-color: #747474;"></div><div class="color-circle" style="background-color: #303030;"></div><div class="color-circle" style="background-color: #a9aaaa;"></div><div class="color-circle" style="background-color: #1f5f9d;"></div><div class="color-circle" style="background-color: #9e9548;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (15).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (15).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #e53f38;"></div><div class="color-circle" style="background-color: #9ad4e5;"></div><div class="color-circle" style="background-color: #363636;"></div><div class="color-circle" style="background-color: #b2322d;"></div><div class="color-circle" style="background-color: #686868;"></div><div class="color-circle" style="background-color: #d6d6d6;"></div><div class="color-circle" style="background-color: #858585;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (16).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (16).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #70cbed;"></div><div class="color-circle" style="background-color: #dff4fb;"></div><div class="color-circle" style="background-color: #484848;"></div><div class="color-circle" style="background-color: #579eb8;"></div><div class="color-circle" style="background-color: #eae4ce;"></div><div class="color-circle" style="background-color: #748a93;"></div><div class="color-circle" style="background-color: #b9b7b6;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (17).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (17).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #d0f0f9;"></div><div class="color-circle" style="background-color: #1ab1e6;"></div><div class="color-circle" style="background-color: #ffffd9;"></div><div class="color-circle" style="background-color: #f9e53c;"></div><div class="color-circle" style="background-color: #515151;"></div><div class="color-circle" style="background-color: #c3c3c3;"></div><div class="color-circle" style="background-color: #868686;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (18).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (18).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #1e9fd7;"></div><div class="color-circle" style="background-color: #20769f;"></div><div class="color-circle" style="background-color: #ffe347;"></div><div class="color-circle" style="background-color: #16445b;"></div><div class="color-circle" style="background-color: #dbbe38;"></div><div class="color-circle" style="background-color: #8b7a2b;"></div><div class="color-circle" style="background-color: #607a75;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (19).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (19).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #87d2ee;"></div><div class="color-circle" style="background-color: #d0f3f7;"></div><div class="color-circle" style="background-color: #e7564e;"></div><div class="color-circle" style="background-color: #fcec90;"></div><div class="color-circle" style="background-color: #f6b750;"></div><div class="color-circle" style="background-color: #616161;"></div><div class="color-circle" style="background-color: #ccbd72;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (20).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (20).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #fad858;"></div><div class="color-circle" style="background-color: #ef514d;"></div><div class="color-circle" style="background-color: #cdcdcd;"></div><div class="color-circle" style="background-color: #656565;"></div><div class="color-circle" style="background-color: #8d7c3b;"></div><div class="color-circle" style="background-color: #cbb04a;"></div><div class="color-circle" style="background-color: #ad9f67;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (21).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (21).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #ebebeb;"></div><div class="color-circle" style="background-color: #19a9e2;"></div><div class="color-circle" style="background-color: #444444;"></div><div class="color-circle" style="background-color: #1588b5;"></div><div class="color-circle" style="background-color: #cfcfcf;"></div><div class="color-circle" style="background-color: #8f8f8f;"></div><div class="color-circle" style="background-color: #b5b5b5;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (22).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (22).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #1a1a1a;"></div><div class="color-circle" style="background-color: #1c99db;"></div><div class="color-circle" style="background-color: #bcbcbc;"></div><div class="color-circle" style="background-color: #3f3f3f;"></div><div class="color-circle" style="background-color: #989898;"></div><div class="color-circle" style="background-color: #7d7d7d;"></div><div class="color-circle" style="background-color: #2e7ba3;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (23).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (23).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #d3d3d3;"></div><div class="color-circle" style="background-color: #1face1;"></div><div class="color-circle" style="background-color: #5e5e5e;"></div><div class="color-circle" style="background-color: #383838;"></div><div class="color-circle" style="background-color: #f89234;"></div><div class="color-circle" style="background-color: #b6b6b6;"></div><div class="color-circle" style="background-color: #86d4f1;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (24).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (24).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #ed4b47;"></div><div class="color-circle" style="background-color: #75c5db;"></div><div class="color-circle" style="background-color: #6e432d;"></div><div class="color-circle" style="background-color: #3a3b3c;"></div><div class="color-circle" style="background-color: #646464;"></div><div class="color-circle" style="background-color: #f19d98;"></div><div class="color-circle" style="background-color: #f2f7f7;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (25).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (25).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #1fa7dd;"></div><div class="color-circle" style="background-color: #b6e4ee;"></div><div class="color-circle" style="background-color: #ffe451;"></div><div class="color-circle" style="background-color: #515151;"></div><div class="color-circle" style="background-color: #73a6b4;"></div><div class="color-circle" style="background-color: #197fa8;"></div><div class="color-circle" style="background-color: #777675;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (26).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (26).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #2cb5e3;"></div><div class="color-circle" style="background-color: #f8d637;"></div><div class="color-circle" style="background-color: #c3c3c2;"></div><div class="color-circle" style="background-color: #c0eaf2;"></div><div class="color-circle" style="background-color: #8c2424;"></div><div class="color-circle" style="background-color: #000000;"></div><div class="color-circle" style="background-color: #253338;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (27).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (27).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #0d9fd8;"></div><div class="color-circle" style="background-color: #a1e3f4;"></div><div class="color-circle" style="background-color: #9d938a;"></div><div class="color-circle" style="background-color: #5c5d5d;"></div><div class="color-circle" style="background-color: #0d84b1;"></div><div class="color-circle" style="background-color: #c0bdbb;"></div><div class="color-circle" style="background-color: #0a658a;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (28).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (28).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #30bfe8;"></div><div class="color-circle" style="background-color: #fad643;"></div><div class="color-circle" style="background-color: #ef3c39;"></div><div class="color-circle" style="background-color: #8ae4da;"></div><div class="color-circle" style="background-color: #2a2a29;"></div><div class="color-circle" style="background-color: #f3f3f2;"></div><div class="color-circle" style="background-color: #f67979;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (29).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (29).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #bcebf4;"></div><div class="color-circle" style="background-color: #37ace0;"></div><div class="color-circle" style="background-color: #323231;"></div><div class="color-circle" style="background-color: #2f87af;"></div><div class="color-circle" style="background-color: #b7b3b0;"></div><div class="color-circle" style="background-color: #727272;"></div><div class="color-circle" style="background-color: #f2f1f0;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (30).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (30).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #3faedc;"></div><div class="color-circle" style="background-color: #bbedf4;"></div><div class="color-circle" style="background-color: #fcea9d;"></div><div class="color-circle" style="background-color: #d0d0d0;"></div><div class="color-circle" style="background-color: #9e9e9e;"></div><div class="color-circle" style="background-color: #2b2b2b;"></div><div class="color-circle" style="background-color: #535352;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (31).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (31).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #c8ecf4;"></div><div class="color-circle" style="background-color: #e7433d;"></div><div class="color-circle" style="background-color: #2fa5d9;"></div><div class="color-circle" style="background-color: #545454;"></div><div class="color-circle" style="background-color: #cacaca;"></div><div class="color-circle" style="background-color: #343434;"></div><div class="color-circle" style="background-color: #2789b4;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (32).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (32).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #228dc6;"></div><div class="color-circle" style="background-color: #33b1e2;"></div><div class="color-circle" style="background-color: #c5e9f4;"></div><div class="color-circle" style="background-color: #ffe757;"></div><div class="color-circle" style="background-color: #a7a7a7;"></div><div class="color-circle" style="background-color: #5b5b5b;"></div><div class="color-circle" style="background-color: #133d52;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (33).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (33).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #f7ca44;"></div><div class="color-circle" style="background-color: #21addf;"></div><div class="color-circle" style="background-color: #474747;"></div><div class="color-circle" style="background-color: #f1f1f1;"></div><div class="color-circle" style="background-color: #1d7e98;"></div><div class="color-circle" style="background-color: #757575;"></div><div class="color-circle" style="background-color: #a8d375;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (34).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (34).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #f8db53;"></div><div class="color-circle" style="background-color: #4bc5ee;"></div><div class="color-circle" style="background-color: #ef4440;"></div><div class="color-circle" style="background-color: #37a1c4;"></div><div class="color-circle" style="background-color: #90e8fe;"></div><div class="color-circle" style="background-color: #facbcc;"></div><div class="color-circle" style="background-color: #f2f2f2;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (36).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (36).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #c2eaf9;"></div><div class="color-circle" style="background-color: #32b6e8;"></div><div class="color-circle" style="background-color: #656565;"></div><div class="color-circle" style="background-color: #4b4b4b;"></div><div class="color-circle" style="background-color: #9c9c9c;"></div><div class="color-circle" style="background-color: #e0a871;"></div><div class="color-circle" style="background-color: #74d7f8;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (37).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (37).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #b4e6f6;"></div><div class="color-circle" style="background-color: #f8d748;"></div><div class="color-circle" style="background-color: #43bfed;"></div><div class="color-circle" style="background-color: #827d67;"></div><div class="color-circle" style="background-color: #959598;"></div><div class="color-circle" style="background-color: #f3f3e8;"></div><div class="color-circle" style="background-color: #399ec3;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (38).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (38).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #c4ecf6;"></div><div class="color-circle" style="background-color: #35b3e4;"></div><div class="color-circle" style="background-color: #d6d1cf;"></div><div class="color-circle" style="background-color: #8d8a89;"></div><div class="color-circle" style="background-color: #a5c3c8;"></div><div class="color-circle" style="background-color: #666767;"></div><div class="color-circle" style="background-color: #414140;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (39).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (39).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #ef5a4f;"></div><div class="color-circle" style="background-color: #eb3431;"></div><div class="color-circle" style="background-color: #239bd8;"></div><div class="color-circle" style="background-color: #fad939;"></div><div class="color-circle" style="background-color: #c9c9c9;"></div><div class="color-circle" style="background-color: #565656;"></div><div class="color-circle" style="background-color: #2f2f2f;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (40).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (40).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #25abdd;"></div><div class="color-circle" style="background-color: #d8d8d8;"></div><div class="color-circle" style="background-color: #343535;"></div><div class="color-circle" style="background-color: #ace0ef;"></div><div class="color-circle" style="background-color: #5b818f;"></div><div class="color-circle" style="background-color: #919191;"></div><div class="color-circle" style="background-color: #2a7d9c;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (41).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (41).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #d4f5fb;"></div><div class="color-circle" style="background-color: #575756;"></div><div class="color-circle" style="background-color: #f14540;"></div><div class="color-circle" style="background-color: #925a32;"></div><div class="color-circle" style="background-color: #d5d5d5;"></div><div class="color-circle" style="background-color: #7f7e7e;"></div><div class="color-circle" style="background-color: #afaeae;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (42).png" /></div>
+            <img class="main-img zoom-standard" src="Black and White/Image (42).png" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #bfecf4;"></div><div class="color-circle" style="background-color: #eb4844;"></div><div class="color-circle" style="background-color: #bdbdbd;"></div><div class="color-circle" style="background-color: #4e4e4e;"></div><div class="color-circle" style="background-color: #181818;"></div><div class="color-circle" style="background-color: #9e9e9e;"></div><div class="color-circle" style="background-color: #be3c39;"></div></div>
+        </div>
+        <div class="page">
+            <div class="ref-box"><img class="ref-img" src="Coloured/Image (43).png" /></div>
+            <img class="main-img zoom-extra" src="Black and White/Image (43).jpg" />
+            <div class="palette-container"><div class="color-circle" style="background-color: #26aadc;"></div><div class="color-circle" style="background-color: #278fb6;"></div><div class="color-circle" style="background-color: #287591;"></div><div class="color-circle" style="background-color: #e62c2b;"></div><div class="color-circle" style="background-color: #fdd630;"></div><div class="color-circle" style="background-color: #808080;"></div><div class="color-circle" style="background-color: #eae9e8;"></div></div>
+        </div>
+        <div class="page">
+            <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; height:100%; color:#ccc; font-family:'Arial Rounded MT Bold', sans-serif;">
+                <h2 style="font-size:3em; margin:0;">Draw your favorite car!</h2>
+                <p style="font-size:100px; margin:20px;">✏️</p>
+            </div>
+        </div>
+        <div class="page blank-page" data-density="hard"></div>
+        
+        <div class="page cover-page" data-density="hard">
+            <img src="Back.png" class="cover-img" alt="Back Cover" />
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const flipBook = document.getElementById('flipbook');
+            flipBook.style.display = 'block';
+            const pageFlip = new St.PageFlip(flipBook, {
+                width: 700, height: 900, size: "stretch", 
+                showCover: true, 
+                maxShadowOpacity: 0.5, mobileScrollSupport: true
+            });
+            pageFlip.loadFromHTML(document.querySelectorAll('.page'));
+            const flipSound = new Audio('flip.wav');
+            pageFlip.on('flip', (e) => { flipSound.currentTime = 0; flipSound.play().catch(err => {}); });
+        });
+    </script>
+</body>
+</html>
